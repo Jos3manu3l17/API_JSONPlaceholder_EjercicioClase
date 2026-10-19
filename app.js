@@ -1,5 +1,6 @@
 import { obtenerPublicaciones } from "./publicaciones.js";
 import { obtenerUsuario } from "./usuario.js";
+import { obtenerAlbumes } from "./albums.js";
 
 const identificador = 8;
 
@@ -9,7 +10,8 @@ const obtenerUsuarioConComentarios = async (id) => {
 
 	return {
 		usuario: usuario.name,
-	publicaciones
+		publicaciones,
+		albumes: await obtenerAlbumes(usuario.id)
 	};
 };
 
